@@ -27,10 +27,10 @@ public class Dias {
     }
     String finalText = text.toString();
     int lastCommaPosition = finalText.lastIndexOf(",");
-    int lastAPosition = finalText.lastIndexOf("à");
+    int firstAPosition = finalText.indexOf("à");
 
     if (lastCommaPosition != -1 && (finalText.chars().filter(ch -> ch == ',').count() > 1
-        || lastCommaPosition > lastAPosition))
+        || lastCommaPosition > firstAPosition))
       finalText = finalText.substring(0, lastCommaPosition) + " e"
           + finalText.substring(lastCommaPosition + 1);
     System.out.println(finalText);
